@@ -1,77 +1,43 @@
 #include<iostream>
 using namespace std;
 
-void InsertionSort(int arr[],int n)
+void in_sort(int *a,int n)
 {
-    int key;
-    int j;
-
-    for(int i=1;i<n;i++)
+    int i,j,x;
+    for(i=1;i<n;i++)
     {
-        key = arr[i];
-        for(j=i-1;j>=0;j--)
+        x=a[i];
+        j=i-1;
+        while(j>=0 && a[j] > x)
         {
-            if(arr[j]>key)
+            a[j+1]=a[j];
+            j--;
+            for(int k=0;k<n;k++)
             {
-                arr[j+1] = arr[j];
-                for(int k=0;k<n;k++)
-                {
-                    cout << arr[k] << " ";
-                }
-
-                cout << endl;
-                arr[j] = key;
-                for(int k=0;k<n;k++)
-                {
-                    cout << arr[k] << " ";
-                }
-
-                cout << endl;
+                cout << a[k] << " ";
             }
+
+            cout << endl;
         }
-        cout << endl << endl;
+            a[j+1]=x;
+            for(int k=0;k<n;k++)
+            {
+                cout << a[k] << " ";
+            }
+
+            cout << endl << endl << endl;
     }
 }
 
-int main()
+int main(void)
 {
-    int sz;
-
-    cout << "Enter the size of the array : ";
-    cin >> sz;
-
-    int arr[sz];
-
-    cout << "Enter " << sz << " integers in any order : " << endl;
-
-    for(int i=0;i<sz;i++)
+    int a[]={89,23,19,101,99,128,1,1000,10,139};
+    int n=sizeof(a)/sizeof(a[0]);
+    in_sort(a,n);
+    for(int i=0;i<n;i++)
     {
-        cin >> arr[i];
+        cout<<a[i]<<" ";
     }
-
-    cout << "Array before sorting : " << endl;
-
-    for(int i=0;i<sz;i++)
-    {
-        cout << arr[i] << " ";
-    }
-
-    cout << endl << endl;
-
-    cout << "METHOD : \n";
-
-    InsertionSort(arr,sz);
-
-    cout << "Array after sorting : " << endl;
-
-    for(int i=0;i<sz;i++)
-    {
-        cout << arr[i] << " ";
-    }
-
-    cout << endl;
-
-
-
+    cout<<endl;
     return 0;
 }
