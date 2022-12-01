@@ -61,7 +61,7 @@ public:
         }
 
         nm->next = temp->next;
-        nm->pre = temp->next->pre;
+        nm->pre = temp;
         temp->next->pre = nm;
         temp->next = nm;
     }
