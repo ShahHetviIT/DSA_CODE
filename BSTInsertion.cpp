@@ -148,6 +148,26 @@ public:
             Q.pop();
         }
     }
+    
+    void Search(int sel)
+    {
+        TreeNode *temp = root;
+
+        while(temp!=NULL)
+        {
+            if(temp->value == sel)
+            {
+                cout << sel << " is present in tree." << endl;
+                return;
+            }
+            if(sel < temp->value)
+                temp = temp->left;
+            else
+                temp = temp->right;
+        }
+
+        cout << sel << " is not present in tree." << endl;
+    }
 };
 
 int main()
