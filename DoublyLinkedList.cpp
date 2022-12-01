@@ -110,7 +110,8 @@ public:
         {
             temp = temp->next;
         }
-
+        
+        temp->next->next->pre = temp;
         temp->next = temp->next->next;
     }
 
@@ -124,6 +125,7 @@ public:
         }
 
         temp->pre->pre->next = temp;
+        temp->pre = temp->pre->pre;
     }
 
     void display()
