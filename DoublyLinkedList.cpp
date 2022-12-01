@@ -98,6 +98,7 @@ public:
         else
         {
             temp->pre->next = temp->next;
+            temp->next->pre = temp->next;
         }
     }
 
