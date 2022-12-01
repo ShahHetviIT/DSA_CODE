@@ -195,4 +195,7 @@ int main()
 
     cout << "\n\nLevel-order : ";
     obj.levelOrder(obj.root);
+    
+    cout << endl << endl;
+    obj.Search(0);
 }
