@@ -58,13 +58,11 @@ public:
         {
             if(Front == rear)
             {
-                Node *temp = Front;
                 Front = NULL;
                 rear = NULL;
             }
             else
             {
-                Node *temp = Front;
                 Front = Front->next;
             }
         }
